@@ -1,91 +1,14 @@
-# LUG@UIC Slide Template
+# Intro to Web Security: Payloads
 
-## Table Of Contents
-- [Description](#description)
-- [Credits](#credits)
-- [Instructions](#instructions)
-  - [Options](#options)
-  - [Markdown to Slides](#markdown-to-slides)
+## Description
 
-# Description
+TODO
 
-A beamer theme for LUG Slideshows entitled "lugatuic". Based on F. Muro's "Seville" theme. Additionally contains a basic template for converting Markdown and Org mode files into slide decks.
+## Running the server
+TODO 
 
-# Credits
+## Building Slides
 
-[Original "Seville" Theme](https://github.com/FMuro/seville)
-F. Muro
+To build the slides in `src`, run `make all`.
 
-# Instructions
-
-## Software Dependencies (for markdown -> PDF usage):
-- GNU Make
-- pandoc
-- pdflatex - provided by the texlive package on debian, and other packages on other systems
-  - Sadly, texlive-full, with its relatively large install size, is the smallest of [the umbrella texlive packages in the official debian apt repos](https://wiki.debian.org/Latex) that works. Not everything in that package is necessary, it is very likely that very *little* of it is necessary. A pretty small set of packages that supports this on debian 13.0 is `texlive` and `texlive-fonts-extra`.
-
-The above dependencies can be installed on debian 13.0 with `apt install make pandoc texlive texlive-fonts-extra`. Those particular packages, on that particular distribution, have been verified to work as prerequisites for using this repository to create PDFs from Markdown (as described below).
-
-Other distributions work, and the required packages on them likely have very similar names. If you have specific instructions for different packages, that's another good thing to contribute with a pull-request.
-
-## After Installation:
-
-To simply use the theme, copy the .sty file into the directory of your LaTeX code and insert `\usepackage{lugatuic}` in your preamble. (The preamble is the metadata before your `begin{document}`)
-
-If you have a Markdown document you want to convert into a slideshow, please see [the instructions below](#markdown-to-slides). <!-- That link is a neat trick which Github conspires with Markdown to enable, see https://stackoverflow.com/questions/2822089/how-to-link-to-part-of-the-same-document-in-markdown -->
-
-## Options
-
-All fonts and compilers supported by the original Seville theme are also supported by this theme!
-
-These font choices have the same caveats as they do in the original theme, which can be found [here](https://github.com/FMuro/seville?tab=readme-ov-file#options).
-
-**Color Themes**
-
-The default color scheme is Gruvbox's Dark Theme.
-To use Catpuccin's Frappe theme, use the `catfrap` option.
-
-Example:
-`\usetheme[catfrap]{lugatuic}`
-
-## Markdown to Slides
-
-Your markdown files or Org Mode files should be in the `src/` folder.
-
-To convert all source files in `src/` into pdfs, run `make all`, which puts output pdfs into `out/`.
-
-To convert an individual file from Markdown or Org Mode into a slide deck, just run:
-
-`make out/NAME.pdf`
-
-Wherein "NAME" is the name of your markdown/org file inside `src/`, without the extension. For example, if I had a markdown file "src/example.md", to turn it into a slide deck, I'd run:
-
-`make out/example.pdf`
-
-### Notable Markdown to Beamer Syntax
-
-While raw LaTeX *should* be able to be embedded into your Markdown and Org mode files, there are a few tricks which make stylizing your slideshow with Markdown much easier!
-
-**Blocks**
-
-Assuming you are using a level 1 heading for your slide titles/dividers (`#`), then any text that follows a level two heading (`##`) until the next level one heading will be put into a block!
-
-**Columns**
-
-If you want two columns (perhaps to put an image alongside text), use the following syntax:
-
-```
-::: columns
-
-:::: column
-left
-::::
-
-:::: column
-right
-::::
-
-:::
-```
-
-Wherein "left" and "right" are the content you want in each column, respectively.
+To add additional slide decks for building, move them into `src`. Similarly, to no longer build a slide deck, remove it from `src` (preferably move them into an archive folder so that others *may* still build old slide decks.)
