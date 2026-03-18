@@ -1,5 +1,13 @@
 # Intro to Web Security: Payloads
 
+***!!!WARNING!!!***
+
+This server code is intentionally really, really vulnerable. It is bad. It is insecure. If you use this code, you are begging for anyone who is even half-literate to drop your tables, steal your users' data, and generally break everything. This cannot be reiterated enough. DO. NOT. USE. THIS. IN. PRODUCTION!
+
+If for some God forsaken reason you decide to use this in production, no one who has or will work on this project will help you. DON'T USE IT!!!!
+
+***!!!WARNING!!!***
+
 ## Description
 
 TODO
